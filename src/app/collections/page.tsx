@@ -209,7 +209,7 @@ export default function MyCollectionsPage() {
                         <h3 style={{ color: "#000000", fontWeight: "bold" }}>
                           {collection.icon} {collection.name}
                         </h3>
-                        <p style={{ fontSize: "14px", color: "#6b7280", marginBottom: "8px" }}>
+                        <p style={{ fontSize: "14px", color: "rgb(19, 0, 34)", marginBottom: "8px" }}>
                           {collection.description || "No description"}
                         </p>
                         <p style={{ fontSize: "14px", fontWeight: "600", color: "#374151" }}>
@@ -224,7 +224,7 @@ export default function MyCollectionsPage() {
                           }}
                           style={{
                             padding: "8px 16px",
-                            background: "#2563eb",
+                            background: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #3b0764 100%)",
                             color: "#fff",
                             border: "none",
                             borderRadius: "6px",
@@ -311,7 +311,7 @@ export default function MyCollectionsPage() {
                         flexShrink: 0
                       }}></div>
 
-                      <div style={{ fontSize: "20px", marginRight: "12px" }}>
+                      <div style={{ fontSize: "20px", marginRight: "12px", fontWeight: "bold", color: "rgb(19, 0, 34)" }}>
                         {collection.icon}
                       </div>
 
@@ -319,7 +319,7 @@ export default function MyCollectionsPage() {
                         <h3 style={{ margin: "0 0 4px", fontSize: "16px", fontWeight: "bold", color: "#000000" }}>
                           {collection.name}
                         </h3>
-                        <p style={{ margin: 0, fontSize: "14px", color: "#6b7280" }}>
+                        <p style={{ margin: 0, fontSize: "14px", color: "rgb(19, 0, 34)" }}>
                           {collection.description || "No description"}
                         </p>
                       </div>
@@ -409,11 +409,14 @@ export default function MyCollectionsPage() {
         <div
           style={{
             position: "sticky",
-            bottom: '200px',
+            bottom: 0,
+            backgroundColor:"rgba(0, 0, 0, 0.5)",
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",            
+            justifyContent: "center",
             zIndex: 1000,
+            minHeight: "100vh",
+            width: "100%",
           }}
           onClick={() => setIsModalOpen(false)}
         >
@@ -423,12 +426,12 @@ export default function MyCollectionsPage() {
               padding: "32px",
               boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
               borderRadius: "12px",
-              maxWidth: "500px",
-              width: "90%",
+              maxWidth: "400px",
+              width: "75%",
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 style={{ marginTop: 0, marginBottom: "24px" }}>Create New Collection</h2>
+            <h2 style={{ color:"rgb(19, 0, 34)", marginTop: 0, marginBottom: "24px" }}>Create New Collection</h2>
             <form onSubmit={handleCreateCollection}>
               <div className="form-group">
                 <label htmlFor="name">Collection Name *</label>
@@ -498,23 +501,23 @@ export default function MyCollectionsPage() {
       {selectedCollection && (
         <div
           style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
+            position: "sticky",
             bottom: 0,
-            background: "rgba(0,0,0,0.5)",
+            backgroundColor:"rgba(0, 0, 0, 0.5)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             zIndex: 1000,
+            minHeight: "100vh",
+            width: "100%",
           }}
           onClick={handleCloseCollectionView}
         >
           <div
             style={{
-              background: "#fff",
-              padding: "32px",
+              position: "sticky",
+              background: "#ffffff",
+              padding: "30px 50px",
               borderRadius: "12px",
               maxWidth: "800px",
               width: "90%",
@@ -741,26 +744,24 @@ export default function MyCollectionsPage() {
       {isDeleteModalOpen && itemToDelete && (
         <div
           style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
+            position: "sticky",
             bottom: 0,
-            background: "rgba(0, 0, 0, 0.6)",
+            backgroundColor:"rgba(0, 0, 0, 0.5)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             zIndex: 1000,
+            minHeight: "calc(100vh - 40px)",
             padding: 20,
           }}
           onClick={() => setIsDeleteModalOpen(false)}
         >
           <div
             style={{
+              position: "sticky",
               background: "#fff",
               borderRadius: 12,
               boxShadow: "0 10px 40px rgba(0, 0, 0, 0.2)",
-              position: "relative",
               maxWidth: "400px",
               width: "90%",
             }}

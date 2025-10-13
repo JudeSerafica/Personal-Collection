@@ -160,19 +160,29 @@ export default function SettingsPage() {
           </div>
         {/* Sign Out Confirmation Modal */}
         {showSignOutModal && (
-          <div className="modal-overlay">
+          <div className="modal-overlay" style={{
+            position: "sticky",
+            bottom: "800px",
+            backgroundColor:"rgba(0, 0, 0, 0.5)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 1000,
+            minHeight: "calc(80vh - 40px)",
+            padding: 20,}}>
             <div className="modal-content" style={{ width: "400px", maxWidth: "90vw" }}>
               <div style={{ padding: "32px", textAlign: "center" }}>
                 <h2 style={{ margin: "0 0 16px", color: "#111", fontSize: "24px", fontWeight: "700" }}>
                   Confirm Sign Out
                 </h2>
-                <p style={{ margin: "0 0 24px", color: "#555", fontSize: "16px", lineHeight: "1.6" }}>
+                <p style={{ margin: "0 0 24px", color: "#555", fontSize: "16px"}}>
                   Are you sure you want to sign out? You will be redirected to the homepage.
                 </p>
                 <div style={{ display: "flex", gap: "12px", justifyContent: "center" }}>
                   <button
                     onClick={handleCancelSignOut}
                     style={{
+                      position: "sticky",
                       padding: "12px 24px",
                       background: "#f3f4f6",
                       color: "#374151",
@@ -189,6 +199,7 @@ export default function SettingsPage() {
                   <button
                     onClick={handleConfirmSignOut}
                     style={{
+                      position: "sticky",
                       padding: "12px 24px",
                       background: "#ef4444",
                       color: "#fff",

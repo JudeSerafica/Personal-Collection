@@ -328,7 +328,7 @@ export default function DashboardHome() {
           style={{
             position: 'sticky',
             bottom: '10px',
-            left: '330',
+            left: '330px',
             width: '56px',
             height: '56px',
             borderRadius: '50%',

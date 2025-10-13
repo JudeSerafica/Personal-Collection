@@ -85,12 +85,12 @@ export default function AddItemModal({ isOpen, onClose, onAdd }: AddItemModalPro
       style={{
         position: "sticky",
         bottom: 0,
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        backgroundColor:"rgba(0, 0, 0, 0.5)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         zIndex: 1000,
-        minHeight: "97vh",
+        minHeight: "100vh",
         width: "100%",
       }}
       onClick={onClose}
@@ -107,7 +107,7 @@ export default function AddItemModal({ isOpen, onClose, onAdd }: AddItemModalPro
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 style={{ marginBottom: "16px" }}>Add New Item</h2>
+        <h2 style={{ color: "rgb(19, 0, 34)",marginBottom: "16px" }}>Add New Item</h2>
         <form onSubmit={handleSubmit} className="form">
           <input
             type="text"

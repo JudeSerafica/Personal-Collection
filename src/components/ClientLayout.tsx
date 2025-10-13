@@ -11,13 +11,16 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
   // Initialize state from localStorage synchronously
   const getInitialSidebarState = () => {
+    if (typeof window === 'undefined') {
+      return false;
+    }
     try {
       const saved = localStorage.getItem('sidebar-open');
       if (saved !== null) {
         return JSON.parse(saved);
       }
       // Default to open on desktop, closed on mobile
-      return typeof window !== 'undefined' ? window.innerWidth >= 768 : false;
+      return window.innerWidth >= 768;
     } catch (error) {
       console.error('Error reading sidebar state from localStorage:', error);
       return false;
