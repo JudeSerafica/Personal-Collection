@@ -23,7 +23,7 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 1;
   font-family: "Inter", Arial, sans-serif;
   background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #3b0764 100%);
   color: #fff;
@@ -317,8 +317,7 @@ body {
   position: sticky;
   top: 0;
   background-color: #f9fbfd;
-  z-index: 1000;
-  height: 100px;
+  z-index: 10;
 }
 
 /* ==========================================

@@ -410,8 +410,6 @@ export default function MyCollectionsPage() {
           style={{
             position: "sticky",
             bottom: '200px',
-            background: "rgba(0,0,0,0.5)",
-            boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
             display: "flex",
             alignItems: "center",
             justifyContent: "center",            
@@ -423,6 +421,7 @@ export default function MyCollectionsPage() {
             style={{
               background: "#fff",
               padding: "32px",
+              boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
               borderRadius: "12px",
               maxWidth: "500px",
               width: "90%",

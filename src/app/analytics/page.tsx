@@ -363,40 +363,6 @@ export default function AnalyticsPage() {
             ))}
           </div>
         </div>
-
-        {/* Filtered Items Drill-down */}
-        {selectedFilter && (
-          <div className="filtered-items bg-white p-6 rounded-lg shadow-lg mt-8">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl font-semibold">Items in {selectedFilter}</h3>
-              <button
-                onClick={() => {
-                  setSelectedFilter(null);
-                  setFilteredItems([]);
-                }}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                ✕
-              </button>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {filteredItems.map((item) => (
-                <div key={item.id} className="item-card p-4 border rounded-lg">
-                  {item.image_url && (
-                    <img
-                      src={item.image_url}
-                      alt={item.title}
-                      className="w-full h-32 object-cover rounded mb-2"
-                    />
-                  )}
-                  <h4 className="font-medium">{item.title}</h4>
-                  <p className="text-sm text-gray-600">{item.description}</p>
-                </div>
-              ))}
-            </div>
-            {filteredItems.length === 0 && <p>No items found.</p>}
-          </div>
-        )}
       </div>
     </ClientLayout>
   );
