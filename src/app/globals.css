@@ -1306,6 +1306,7 @@ body {
   .search-filter-bar {
     gap: 8px;
     margin-bottom: 20px;
+    flex-direction: row;
     justify-content: space-between;
   }
 
@@ -1326,11 +1327,7 @@ body {
   }
 
   .search-filter-bar .button {
-    flex: 0 0 auto;
-    min-height: 48px;
-    padding: 12px 20px;
-    font-size: 16px;
-    white-space: nowrap;
+    display: none;
   }
 }
 
@@ -1474,6 +1471,13 @@ body {
 .view-modal {
   width: 600px;
   max-width: 90vw;
+}
+
+@media (max-width: 767px) {
+  .view-modal {
+    width: 90vw;
+    max-width: 90vw;
+  }
 }
 
 .view-modal-body {
@@ -2090,3 +2094,4 @@ body {
     margin: 0;
   }
 }
+

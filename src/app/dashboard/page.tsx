@@ -296,7 +296,7 @@ export default function DashboardHome() {
                 </option>
               ))}
             </select>
-            <button onClick={() => setIsAddModalOpen(true)} className="button hidden lg:block">
+            <button onClick={() => setIsAddModalOpen(true)} className="button hidden md:block">
               + Add New Item
             </button>
           </div>

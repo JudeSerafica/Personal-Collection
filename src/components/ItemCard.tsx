@@ -45,6 +45,16 @@ export default function ItemCard({
             src={image}
             alt={title}
             onDoubleClick={() => onView(id)}
+            onTouchEnd={(e) => {
+              // Handle double tap on mobile
+              const now = Date.now();
+              const DOUBLE_TAP_DELAY = 300;
+              const target = e.target as HTMLElement & { lastTap?: number };
+              if (target.lastTap && (now - target.lastTap) < DOUBLE_TAP_DELAY) {
+                onView(id);
+              }
+              target.lastTap = now;
+            }}
             style={{
               width: "100%",
               maxWidth: "250px",
