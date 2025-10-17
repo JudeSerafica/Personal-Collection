@@ -33,17 +33,26 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
   useEffect(() => {
     const checkAuth = async () => {
-      const {
-        data: { session },
-        error,
-      } = await supabase.auth.getSession();
+      try {
+        const {
+          data: { session },
+          error,
+        } = await supabase.auth.getSession();
 
-      if (error) {
-        console.error("Auth error:", error.message);
-        return;
-      }
+        if (error) {
+          console.error("Auth error:", error.message);
+          // If refresh token is invalid, redirect to login
+          if (error.message.includes('Refresh Token Not Found') || error.message.includes('Invalid Refresh Token')) {
+            router.replace("/login");
+            return;
+          }
+        }
 
-      if (!session?.user) {
+        if (!session?.user) {
+          router.replace("/login");
+        }
+      } catch (err) {
+        console.error("Auth check failed:", err);
         router.replace("/login");
       }
     };

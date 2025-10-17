@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function HomePage() {
   useEffect(() => {
     document.body.style.background =
-      "linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #3b0764 100%)";
+      "pink";
   }, []);
 
   const containerStyle: React.CSSProperties = {
