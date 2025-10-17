@@ -3,10 +3,16 @@
 import { useEffect } from "react";
 import Link from "next/link";
 
-export default function HomePage() {
+/*************  ✨ Windsurf Command ⭐  *************/
+/**
+ * HomePage component displays the main page of the application.
+ * It includes a header, a paragraph, a button to login, and a section
+ * with three cards showcasing the features of the app.
+ */
+/*******  18841868-1f7d-4116-a039-ff1ed017fdef  *******/export default function HomePage() {
   useEffect(() => {
     document.body.style.background =
-      "pink";
+      "linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #3b0764 100%)";
   }, []);
 
   const containerStyle: React.CSSProperties = {
